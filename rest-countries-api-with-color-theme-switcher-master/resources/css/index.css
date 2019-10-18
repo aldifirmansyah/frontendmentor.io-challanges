@@ -1,0 +1,23 @@
+#filter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#filter > .element {
+	width: 30%;
+	padding: 12px;
+	border-radius: 8px;
+	box-shadow: 1px 1px 3px gray;
+}
+
+#filter #search-icon {
+	width: 16px;
+	margin-right: 4px;
+}
+
+#filter input {
+	border: none;
+	outline: none;
+	width: 80%;
+}

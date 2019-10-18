@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/index.css">
+	<title>Countries</title>
+</head>
+<body>
+	<nav id="navbar" class="element">
+		<div id="title" class="text">Where in the world?</div>
+		<div id="dark-mode" class="text" onclick="toggleTheme()"><img id="moon"> Dark Mode</div>
+	</nav>
+	<div class="container background">
+		<section id="filter">
+			<div class="element">
+				<img id="search-icon">
+				<input class="element input" type="" name="" placeholder="Search for a country...">
+			</div>
+			<select></select>
+		</section>
+	</div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="resources/js/fetch-data.js"></script>
+	<script type="text/javascript" src="resources/js/navbar.js"></script>
+	<script type="text/javascript" src="resources/js/dark-mode.js"></script>
+	<script type="text/javascript" src="resources/js/index.js"></script>
+</body>
+</html>

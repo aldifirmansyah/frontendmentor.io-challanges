@@ -1,0 +1,82 @@
+html {
+	font-size: 16px;
+	color: black;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.dark-element {
+	background: hsl(209, 23%, 22%);
+}
+
+.dark-background {
+	background: hsl(207, 26%, 17%);
+}
+
+.dark-text {
+	color: hsl(0, 0%, 100%);
+}
+
+.light-element {
+	background: hsl(0, 0%, 100%);
+}
+
+.light-background {
+	background: hsl(0, 0%, 98%);
+}
+
+.light-text {
+	color: hsl(200, 15%, 8%);
+}
+
+.light-input {
+	color: hsl(0, 0%, 52%);
+}
+
+nav {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 72px;
+	width: 100%;
+	height: 64px;
+	box-shadow: 1px 1px 4px black;
+	transition: top 0.5s;
+}
+
+#title {
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+#dark-mode {
+	cursor: pointer;
+}
+
+#dark-mode:hover {
+	text-shadow: 2px 2px 4px gray;
+}
+
+nav img {
+	width: 12px;
+	margin: 2px;
+}
+
+.container {
+	min-height: 100vh;
+	padding: 120px 64px 64px 64px;
+	display: flex;
+	flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+	nav {
+		padding: 24px 12px;
+	}
+}
