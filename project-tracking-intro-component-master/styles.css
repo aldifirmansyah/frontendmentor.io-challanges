@@ -91,11 +91,29 @@ html {
 	cursor: pointer;
 }
 
-#burger > div {
+#burger > .hidden {
+	display: none;
+}
+
+#burger > #burger-close > div {
 	height: 2px;
 	width: 24px;
 	margin: 4px;
 	background: hsl(230, 29%, 20%);
+}
+
+#burger > #burger-open > div:first-child {
+	height: 2px;
+	width: 24px;
+	background: hsl(230, 29%, 20%);
+	transform: rotate(45deg);
+}
+
+#burger > #burger-open > div:last-child {
+	height: 2px;
+	width: 24px;
+	background: hsl(230, 29%, 20%);
+	transform: rotate(-45deg);
 }
 
 nav {
@@ -164,6 +182,10 @@ nav .special {
 		left: 0;
 	}
 
+	#burger > .open {
+		visibility: hidden;
+	}
+
 	.container {
 		flex-direction: column;
 		height: auto;
@@ -199,7 +221,7 @@ nav .special {
 		box-shadow: 8px 8px 8px grey;
 	}
 
-	.close {
+	nav.close {
 		display: none;
 	}
 
