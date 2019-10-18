@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans";
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  body {
+    background-image: url("images/bg-pattern-desktop.svg");
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .detail-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 72px 144px 0 144px;
+  }
+  .detail {
+    min-height: 360px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-container {
+    background-image: url("images/hero-desktop.jpg");
+    width: 40%;
+    height: 100vh;
+  }
+  #hero {
+    width: 100%;
+  }
+  .pink {
+    color: #C9979B;
+  }
+  .big-font {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .light {
+    font-weight: 300;
+  }
+  .form-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .form-wrapper  input {
+    height: 48px;
+    width: 70%;
+    border-radius: 50px;
+    padding: 16px;
+    border: 1px solid #D9CACD;
+    background: transparent;
+  }
+  ::placeholder {
+    color: #C9979B;
+    opacity: .3;
+  }
+  .form-wrapper input[class*="error"] {
+    border: 2px solid #E1706C;
+  }
+  .form-wrapper #warning {
+    margin-left: -80px;
+    margin-right: 10px;
+  }
+  .hide {
+    visibility: hidden;
+  }
+  .form-wrapper  button {
+    height: 48px;
+    width: 80px;
+    border: 0;
+    border-radius: 50px;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  #warning-text {
+    margin: 4px 8px;
+  }
+  .attribution { font-size: 11px; text-align: center; }
+
+  @media only screen and (max-width: 767px) {
+    .container {
+      width: 100%;
+      flex-direction: column;
+    }
+    .detail-container {
+      width: 100%;
+      justify-content: center;
+      padding: 24px 36px 0 36px;
+      order: 1;
+    }
+    .logo {
+      position: absolute;
+      top: 8px;
+    }
+    .detail {
+      text-align: center;
+    }
+    .hero-container {
+      background-image: url("images/hero-mobile.jpg");
+      width: 100%;
+      height: 250px;
+      margin-top: 64px;
+    }
+    .big-font {
+      font-size: 2rem;
+    }
+    .form-wrapper input {
+      width: 80%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="detail-container">
+      <div class="logo">
+        <img src="images/logo.svg">
+      </div>
+      <div class="detail">
+        <p class="big-font pink light">WE'RE</p>
+        <P class="big-font bold">COMING</P>
+        <p class="big-font bold">SOON</p>
+        <br>
+        <br>
+        <p class="pink">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        <br>
+        <br>
+        <div class="form-wrapper">
+          <input id="email" class="pink" type="text" name="email" placeholder="Email Address">
+          <span id="warning" class="hide"><img src="images/icon-error.svg"></span>
+          <button onclick="submit()">></button>
+        </div>
+        <p id="warning-text" class="pink hide">Please provide a valid email</p>
+      </div>
+      <footer>
+        <p class="attribution pink">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">Aldi Firmansyah</a>.
+        </p>
+        <br>
+      </footer>
+    </div>
+    <div class="hero-container">
+    </div>
+  </div>
+  <script type="text/javascript">
+    const email = document.getElementById("email");
+    const warningIcon = document.getElementById("warning");
+    const warningText = document.getElementById("warning-text");
+
+    function addError() {
+      if (!email.classList.contains("error")) email.classList.remove("error");
+
+      if (warningIcon.classList.contains("hide")) warningIcon.classList.remove("hide");
+
+      if (warningText.classList.contains("hide")) warningText.classList.remove("hide");
+    }
+
+    function removeError() {
+      if (email.classList.contains("error")) email.classList.add("error");
+      
+      if (!warningIcon.classList.contains("hide")) warningIcon.classList.add("hide");
+      
+      if (!warningText.classList.contains("hide")) warningText.classList.add("hide");
+    }
+    function submit() {
+      const emailVal = email.value;
+      if (emailVal === "") addError();
+      else removeError();
+    }
+  </script>
+</body>
+</html>
